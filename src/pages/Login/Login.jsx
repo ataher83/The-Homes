@@ -14,24 +14,34 @@ const Login = () => {
                 </div>
 
                 <div className="card  w-full  shadow-2xl bg-green-100">
+
                     <form className="card-body">
+
                         <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="email" placeholder="email" className="input input-bordered" required />
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
+
                         <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input type="password" placeholder="password" className="input input-bordered" required />
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
                         </div>
+
                         <div className="form-control mt-6">
                         <button className="btn bg-green-600 font-bold ">Login</button>
+                        </div>
+
+                        <div className="mt-2 font-semibold text-center">
+                        <p>OR Login with:</p>
+                        <button className="btn-ghost">Google</button>
+                        <button className="btn-ghost ml-4">GitHub</button>
                         </div>
                     </form>
 
