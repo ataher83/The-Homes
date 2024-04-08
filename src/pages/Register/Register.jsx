@@ -5,7 +5,6 @@ import Navbar from "../Shared/Navbar/Navbar";
 const Register = () => {
     return (
         <div>
-        <Navbar></Navbar>
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col w-3/4 lg:w-1/2">
 
