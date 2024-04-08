@@ -52,12 +52,6 @@ const Register = () => {
                             <button className="btn bg-purple-600 font-bold text-black ">Login</button>
                         </div>
 
-                        <div className="mt-2 font-semibold text-center">
-                            <p>OR Login with:</p>
-                            <button className="btn-ghost">Google</button>
-                            <button className="btn-ghost ml-4">GitHub</button>
-                        </div>
-
                     </form>
 
                     <p className="text-center mt-4">Already have an account? <Link className="text-green-600 font-bold" to="/login">Login</Link></p>

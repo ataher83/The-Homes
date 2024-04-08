@@ -1,11 +1,12 @@
 import Navbar from "../Shared/Navbar/Navbar";
+import Banner from "./Banner";
 
 
 const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <p>Home page</p>
+            <Banner></Banner>
         </div>
     );
 };
