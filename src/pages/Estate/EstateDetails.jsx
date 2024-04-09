@@ -9,13 +9,16 @@ import { IoLogoUsd } from "react-icons/io";
 const EstateDetails = () => {
 
     const homes =useLoaderData();
-
     const {id} = useParams()
+        // console.log(id)
+    // console.log( typeof(id) )
+    //এখানে প্যারাম এর মাধ্যেমে যে id পাওয়া যায় তা String, তাই একে Integer এ কনভারট করে নিতে হবে, অথবা  == (double equal operator) দিয়ে কম্পেয়ার করতে হবে। 
+
     const idInt = parseInt(id)
-    // console.log(id)
+
     const home = homes.find(h => h.id === idInt) 
-    console.log( id, homes )
-    console.log( typeof(id) )
+    // console.log( id, homes )
+   
 
 
 
