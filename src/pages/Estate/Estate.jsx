@@ -1,6 +1,7 @@
 import { ImLocation2 } from "react-icons/im";
 import { TfiRulerAlt2 } from "react-icons/tfi";
 import { IoLogoUsd } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Estate = ({estate}) => {
     const { id, estate_title, segment_name, description, price, status, area, location, facilities, image, } = estate;
@@ -42,9 +43,11 @@ const Estate = ({estate}) => {
                         <div className="badge badge-outline  bg-blue-400 font-semibold text-white border-blue-500">{facilities[2]}</div> 
                     </div>
 
-                    <div className="card-actions justify-between ">
-                        
+                    <div className="text-center mt-5">
+                        <Link to={`/estateDetails/${id}`}><button className="btn btn-info w-1/3 ">View Property</button></Link>
                     </div>
+                    
+
                 </div>
         </div>
   

@@ -9,8 +9,7 @@
       "area": "1500 sq ft",
       "location": "123 Oak Street, Anytown, USA",
       "facilities": ["Living Room", "Kitchen", "Garden"],
-      "image": "https://i.ibb.co/XbG5qCJ/1.jpg",
-      "button": "View Property"
+      "image": "https://i.ibb.co/XbG5qCJ/1.jpg"
     },
     {
       "id": 2,
@@ -22,8 +21,7 @@
       "area": "1000 sq ft",
       "location": "456 Main Street, City Center, USA",
       "facilities": ["Open Floor Plan", "Gym", "Parking"],
-      "image": "https://i.ibb.co/2jHst6r/2.webp",
-      "button": "View Property"
+      "image": "https://i.ibb.co/2jHst6r/2.webp"
     },
     {
       "id": 3,
@@ -35,8 +33,7 @@
       "area": "2200 sq ft",
       "location": "789 Lakeview Drive, Lakeside, USA",
       "facilities": ["Lake Access", "Community Pool", "Playground"],
-      "image": "https://i.ibb.co/PYBnfB0/1.jpg",
-      "button": "View Property"
+      "image": "https://i.ibb.co/PYBnfB0/1.jpg"
     },
     {
       "id": 4,
@@ -48,8 +45,7 @@
       "area": "3000 sq ft",
       "location": "101 Skyline Avenue, Metropolis, USA",
       "facilities": ["Rooftop Terrace", "Swimming Pool", "Fitness Center"],
-      "image": "https://i.ibb.co/7g4tvfW/4.jpg",
-      "button": "View Property"
+      "image": "https://i.ibb.co/7g4tvfW/4.jpg"
     },
     {
       "id": 5,
@@ -61,8 +57,7 @@
       "area": "1800 sq ft",
       "location": "123 Beach Boulevard, Seaside, USA",
       "facilities": ["Beach Access", "Private Patio", "Barbecue Area"],
-      "image": "https://i.ibb.co/q15cK07/5.jpg",
-      "button": "View Property"
+      "image": "https://i.ibb.co/q15cK07/5.jpg"
     },
     {
       "id": 6,
@@ -74,8 +69,7 @@
       "area": "2500 sq ft",
       "location": "456 Maple Lane, Suburbia, USA",
       "facilities": ["Family Room", "Backyard Garden", "Garage"],
-      "image": "https://i.ibb.co/YZ05XYV/6.webp",
-      "button": "View Property"
+      "image": "https://i.ibb.co/YZ05XYV/6.webp"
     },
     {
       "id": 7,
@@ -87,8 +81,7 @@
       "area": "900 sq ft",
       "location": "789 University Avenue, College Town, USA",
       "facilities": ["Study Area", "Laundry Room", "Common Room"],
-      "image": "https://i.ibb.co/p4GQhYc/7.jpg",
-      "button": "View Property"
+      "image": "https://i.ibb.co/p4GQhYc/7.jpg"
     },
     {
       "id": 8,
@@ -100,8 +93,7 @@
       "area": "1200 sq ft",
       "location": "456 Mountain Road, Alpine Village, USA",
       "facilities": ["Fireplace", "Deck", "Hiking Trails"],
-      "image": "https://i.ibb.co/HPVW8Fx/8.webp",
-      "button": "View Property"
+      "image": "https://i.ibb.co/HPVW8Fx/8.webp"
     },
     {
       "id": 9,
@@ -113,8 +105,7 @@
       "area": "4000 sq ft",
       "location": "789 Tower Avenue, Downtown Metropolis, USA",
       "facilities": ["Concierge Service", "Infinity Pool", "Sky Lounge"],
-      "image": "https://i.ibb.co/Sdby4VT/9.jpg",
-      "button": "View Property"
+      "image": "https://i.ibb.co/Sdby4VT/9.jpg"
     }
   ]
   
