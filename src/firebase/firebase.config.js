@@ -13,15 +13,6 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_STORAGEBUCKET,
   messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
   appId: import.meta.env.VITE_APPID,
-
-
-
-  // apiKey: "AIzaSyBaXNWzQhnDyJJtHE2cRZEcMkokFyXV7aU",
-  // authDomain: "the-homes-7063c.firebaseapp.com",
-  // projectId: "the-homes-7063c",
-  // storageBucket: "the-homes-7063c.appspot.com",
-  // messagingSenderId: "410547926647",
-  // appId: "1:410547926647:web:dc64aa35544b1fc0a4b872"
 };
 
 // Initialize Firebase
