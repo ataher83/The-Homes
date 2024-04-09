@@ -10,7 +10,7 @@ const Estate = ({estate}) => {
             
         <div className="card bg-base-100 shadow-xl mt-4">
 
-                <figure><img className="w-full h-72" src={image} alt="Shoes" />
+                <figure><img className="w-full h-72" src={image} alt="House Image" />
                 </figure>
 
                 <div className="flex justify-between px-2 pt-1 font-semibold">
@@ -26,7 +26,7 @@ const Estate = ({estate}) => {
                                 <p className="text-center font-semibold -mt-1 ">{id}</p>
                             </div>
                         </div>
-                        <h2 className="card-title">
+                        <h2 className=" lg:card-title">
                             {estate_title}
                             <div className="badge badge-secondary">{segment_name}</div>
                         </h2>
