@@ -6,13 +6,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext);
 
     const [regError, setRegError] = useState(''); 
     const [success, setSuccess] = useState(''); 
 
     const location = useLocation(); 
     const navigate = useNavigate();
+
+
 
     const handleLogin = e => {
         e.preventDefault();
@@ -39,9 +41,11 @@ const Login = () => {
             .catch(error => {
                 console.error(error);
                 setRegError(error.message);
-                toast.error(error.message);
+                // toast.error(error.message);
+                toast.error('Invalid Email or Password !');
             })
     }
+
 
 
     return (
@@ -78,16 +82,15 @@ const Login = () => {
                         <div className="form-control mt-6">
                         <button className="btn bg-green-600 font-bold ">Login</button>
                         </div>
-
-                        <div className="mt-2 font-semibold text-center">
-                        <p>OR Login with:</p>
-                        <button className="btn-ghost">Google</button>
-                        <button className="btn-ghost ml-4">GitHub</button>
-                        </div>
                     </form>
 
+                    <div className="-mt-6 font-semibold text-center">
+                        <button onClick={handleGoogleSignIn} className="btn">Login with Google</button>
+                        <button onClick={handleGithubSignIn} className="btn ml-4">Login with GitHub</button>
+                    </div>
 
-                    <div className="text-center -mt-5">
+
+                    <div className="text-center mt-5">
                         {
                             regError && <p className="text-red-600">{regError}</p>
                         }
