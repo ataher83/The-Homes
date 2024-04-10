@@ -1,10 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { IoEye } from "react-icons/io5";
+import { IoEyeOff } from "react-icons/io5";
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+
+    const [regError, setRegError] = useState(''); 
+    const [success, setSuccess] = useState(''); 
+    const [showPassword, setShowPassword] = useState(false); 
 
     const handleRegister = e => {
         e.preventDefault(); 
@@ -15,15 +21,44 @@ const Register = () => {
         const photoURL = form.get('photoURL')
         const email = form.get('email')
         const password = form.get('password')
-        // console.log(name, photoURL, email, password)
+
+        const accepted = form.get('terms')
+        // console.log(name, photoURL, email, password, accepted)
+
+        //reset error & success message
+        setRegError('');
+        setSuccess('');
 
 
+        if (password.length < 6) {
+            setRegError('Password should be minimum 6 characters');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegError('Password should be at least 1 Upper case character');
+            return;
+        }
+        else if (!/[a-z]/.test(password)) {
+            setRegError('Password should be at least 1 lower case character');
+            return;
+        }
+        else if (!accepted) {
+            setRegError('Please accept our Tearms & Conditions!');
+            return;
+        }
+
+
+
+
+        // create user
         createUser(email, password)
             .then(result => {
                 console.log(result.user) 
+                setSuccess('User Created Successfully.')
             })
             .catch(error => {
                 console.error(error)
+                setRegError(error.message);
             })
 
     
@@ -65,15 +100,31 @@ const Register = () => {
                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
 
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <div className="flex items-center w-full">
+                                <input type={showPassword? "text" : "password"}
+                                 name="password" placeholder="password" className="input input-bordered w-full relative" required /> 
+                                <span onClick={()=>{setShowPassword(!showPassword)}} 
+                                className="text-2xl flex ml-[60%] lg:ml-[80%] absolute">
+                                    {
+                                        showPassword? <IoEyeOff /> : <IoEye/>
+                                    }
+                                </span>
+                            </div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
+
+                        <div className="my-2">
+                            <input type="checkbox" name="terms" id="terms" />
+                            <label className="ml-2" htmlFor="terms">Accept <a href="#">Terms and Conditions</a></label>
+                        </div>
+
 
                         <div className="form-control mt-6">
                             <button className="btn bg-purple-600 font-bold text-black ">Register</button>
@@ -81,7 +132,16 @@ const Register = () => {
 
                     </form>
 
-                    <p className="text-center mt-4">Already have an account? <Link className="text-green-600 font-bold" to="/login">Login</Link></p>
+                    <div className="text-center -mt-5">
+                        {
+                            regError && <p className="text-red-600">{regError}</p>
+                        }
+                        {
+                            success && <p className="text-green-500">{success}</p>
+                        }
+                    </div>
+
+                    <p className="text-center text-lg py-4">Already have an account? <Link className="text-green-600 font-bold" to="/login">Login</Link></p>
 
                 </div>
             </div>
