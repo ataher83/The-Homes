@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -28,7 +30,8 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
-                setSuccess('User Created Successfully.')
+                setSuccess('You have Logged-In Successfully.')
+                toast.success('You have Logged-In Successfully.')
 
                 //navigate after login
                 navigate(location?.state?  location.state : '/');
@@ -36,6 +39,7 @@ const Login = () => {
             .catch(error => {
                 console.error(error);
                 setRegError(error.message);
+                toast.error(error.message);
             })
     }
 
@@ -99,6 +103,9 @@ const Login = () => {
                 </div>
             </div>
         </div>
+
+        <ToastContainer />
+        
       </div>
     );
 };

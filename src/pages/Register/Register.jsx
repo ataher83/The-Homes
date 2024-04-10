@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -32,18 +34,22 @@ const Register = () => {
 
         if (password.length < 6) {
             setRegError('Password should be minimum 6 characters');
+            toast.error('Password should be minimum 6 characters');
             return;
         }
         else if (!/[A-Z]/.test(password)) {
             setRegError('Password should be at least 1 Upper case character');
+            toast.error('Password should be at least 1 Upper case character');
             return;
         }
         else if (!/[a-z]/.test(password)) {
             setRegError('Password should be at least 1 lower case character');
+            toast.error('Password should be at least 1 lower case character');
             return;
         }
         else if (!accepted) {
             setRegError('Please accept our Tearms & Conditions!');
+            toast.error('Please accept our Tearms & Conditions!');
             return;
         }
 
@@ -55,10 +61,12 @@ const Register = () => {
             .then(result => {
                 console.log(result.user) 
                 setSuccess('User Created Successfully.')
+                toast.success('User Created Successfully.');
             })
             .catch(error => {
                 console.error(error)
                 setRegError(error.message);
+                toast.error(error.message);
             })
 
     
@@ -146,6 +154,9 @@ const Register = () => {
                 </div>
             </div>
         </div>
+
+        <ToastContainer />
+
       </div>
     );
 };
