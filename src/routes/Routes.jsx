@@ -9,11 +9,13 @@ import Register from "../pages/Register/Register";
 import EstateDetails from "../pages/Estate/EstateDetails";
 import PrivateRoute from "./PrivateRoute";
 import OurAgents from "../pages/OurAgents/OurAgents";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
