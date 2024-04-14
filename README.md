@@ -1,8 +1,21 @@
-# React + Vite
+# The Homes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live site:
+- [The Homes](https://the-homes-7063c.web.app/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features and Characteristics/ Resources:
+- [TailwindCSS](https://tailwindcss.com/)
+- [Daisy UI](https://daisyui.com/)
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/en/main)
+  
+
+npm pkg for challenge work:
+- [Animate.css](https://animate.style/)
+- [React Leaflet](https://react-leaflet.js.org/)
+- [Swiper](https://swiperjs.com/)
+
+
+  
