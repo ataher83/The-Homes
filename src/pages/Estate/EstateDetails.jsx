@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { ImLocation2 } from "react-icons/im";
 import { TfiRulerAlt2 } from "react-icons/tfi";
 import { IoLogoUsd } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -24,6 +25,9 @@ const EstateDetails = () => {
 
     return (
         <div className="card bg-base-100 shadow-xl mt-4">
+            <Helmet>
+                <title>The-Homes | EstateDetails: {id}</title>
+            </Helmet>
 
             <figure><img className="w-full h-72" src={home.image} alt="Shoes" />
             </figure>

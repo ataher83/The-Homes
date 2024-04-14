@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -50,6 +51,9 @@ const Login = () => {
 
     return (
       <div>
+        <Helmet>
+            <title>The-Homes | Login</title>
+        </Helmet>
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col w-3/4 lg:w-1/2">
 

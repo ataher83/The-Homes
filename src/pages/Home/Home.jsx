@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Estate from "../Estate/Estate";
 import Banner from "./Banner";
+import LocationMap from "../Shared/LocationMap/LocationMap";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -9,6 +11,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>The-Homes | Home</title>
+            </Helmet>
             <Banner></Banner>
             <div className="py-16">
                 <p className="text-center text-3xl font-semibold">Discover Our Featured Listings</p>
@@ -22,6 +27,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <LocationMap></LocationMap>
         </div>
     );
 };
