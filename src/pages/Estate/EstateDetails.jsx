@@ -24,7 +24,7 @@ const EstateDetails = () => {
 
 
     return (
-        <div className="card bg-base-100 shadow-xl mt-4">
+        <div className="card bg-base-100 shadow-xl mt-4  animate__animated animate__fadeIn">
             <Helmet>
                 <title>The-Homes | EstateDetails: {id}</title>
             </Helmet>

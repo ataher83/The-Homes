@@ -13,11 +13,11 @@ const Home = () => {
         <div>
             <Helmet>
                 <title>The-Homes | Home</title>
-            </Helmet>
+            </Helmet> 
             <Banner></Banner>
             <div className="py-16">
-                <p className="text-center text-3xl font-semibold">Discover Our Featured Listings</p>
-                <p className="text-center">Find your dream, find exclusive real estate opportunities within the cities & towns & villages.</p>
+                <p className="text-center text-3xl font-semibold   animate__animated animate__bounceInLeft">Discover Our Featured Listings</p>
+                <p className="text-center animate__animated animate__bounceIn ">Find your dream, find exclusive real estate opportunities within the cities & towns & villages.</p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {
                         estates.map(estate => <Estate

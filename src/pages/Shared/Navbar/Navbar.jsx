@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import 'animate.css';
 
 
 const Navbar = () => {
@@ -35,7 +36,7 @@ const Navbar = () => {
 
                 </ul>
                 </div>
-                <a className="text-3xl font-bold" href="/">The Homes</a>
+                <a className="text-3xl font-bold  animate__animated animate__bounce " href="/">The Homes</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
