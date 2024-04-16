@@ -7,7 +7,8 @@ const Offers = () => {
             <Helmet>
                 <title>The-Homes | Offers</title>
             </Helmet>
-            Offers is private. only for register userd.
+            <p>Offers is private. only for register users.</p>
+            <p>15% Extra discount for Vacation Rentals only for registered users.</p>
         </div>
     );
 };

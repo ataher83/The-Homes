@@ -5,7 +5,9 @@ import { Navigate } from "react-router-dom";
 
 
 const UpdateProfile = () => {
-    const { user, updateUserProfile } = useContext(AuthContext);
+    const { user, updateUserProfile,
+         setReload 
+        } = useContext(AuthContext);
 
     const handleProfileUpdate = e => {
         e.preventDefault(); 
@@ -25,6 +27,7 @@ const UpdateProfile = () => {
         // update profile 
         updateUserProfile(name, photoURL).then(()=> {
             Navigate(form);
+            setReload(true);
         });
     
     }

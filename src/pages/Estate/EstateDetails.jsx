@@ -46,7 +46,7 @@ const EstateDetails = () => {
                             <p className="text-center font-semibold -mt-1 ">{home.id}</p>
                         </div>
                     </div>
-                    <h2 className="card-title">
+                    <h2 className=" lg:card-title">
                         {home.estate_title}
                         <div className="badge badge-secondary">{home.segment_name}</div>
                     </h2>

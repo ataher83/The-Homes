@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/offers',
-            element: <Offers></Offers>
+            element: <PrivateRoute><Offers></Offers></PrivateRoute>
         },
         {
             path: '/ourAgents',

@@ -14,17 +14,14 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null); 
     const [loading, setLoading] = useState(true); 
 
+    const [reload, setReload] = useState(false); 
+
+
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password); 
     }
     
-    
-    // const updateUser = (displayName, photoURL) => {
-    //     setLoading(true)
-    //     return updateProfile(auth, email, password); 
-    // }
-
     const updateUserProfile = (name, image) => {
         setLoading(true)
         return updateProfile(auth.currentUser, {
@@ -32,32 +29,6 @@ const AuthProvider = ({children}) => {
             photoURL: image
           }) 
     }
-
-
-
-
-
-
-//     // import { getAuth, updateProfile } from "firebase/auth";
-// // const auth = getAuth();
-// updateProfile(auth.currentUser, {
-//   displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
-// }).then(() => {
-//   // Profile updated!
-//   // ...
-// }).catch((error) => {
-//   // An error occurred
-//   // ...
-// });
-
-
-
-
-
-
-
-
-
 
     const signIn = (email, password) => {
         setLoading(true)
@@ -108,7 +79,8 @@ const AuthProvider = ({children}) => {
         return () => {
             unSubscribe(); 
         }
-    }, [])
+    // }, [])
+    }, [reload])
 
 
     const authInfo = {
@@ -116,6 +88,7 @@ const AuthProvider = ({children}) => {
         loading,
         createUser,
         updateUserProfile,
+        setReload,
         signIn,
         handleGoogleSignIn,
         handleGithubSignIn,

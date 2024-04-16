@@ -9,7 +9,7 @@ const UserProfile = () => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center text-blue-600">
+        <div className="flex flex-col justify-center items-center text-blue-600 mb-5">
             <Helmet>
                 <title>The-Homes | UserProfile</title>
             </Helmet>

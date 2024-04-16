@@ -9,14 +9,13 @@ const ErrorPage = () => {
             <h1>Oops!!!</h1>
             <p>Sorry, an unexpected error has occurred.</p>
             <p>
-                {error.statusText || error.message}
+                {/* {error.statusText || error.message} */}
                 {
                     error.status === 404 && <div>
-                        <h3>Page not found</h3>
-                        <p>Go back where you form</p>
-                        <Link to ="/"><button className="btn btn-info text-white text-2xl  mt-5">Home</button></Link>
+                        {/* <h3>Page not found</h3> */}
+                        <p>Go back where you form.</p>
+                        <Link to ="/"><button className="btn btn-info text-white text-2xl  mt-5">Go to Home</button></Link>
                     </div>
-
                 }
             </p>
         </div>
