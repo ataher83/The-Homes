@@ -1,19 +1,27 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
-    const { signIn, handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext);
+    const {  signIn,  googleSignIn, githubSignIn, 
+        // handleGithubSignIn,
+        // regError,
+        // success
+    } = useContext(AuthContext);
 
     const [regError, setRegError] = useState(''); 
     const [success, setSuccess] = useState(''); 
 
     const location = useLocation(); 
     const navigate = useNavigate();
+
+
+    const [user, setUser] = useState(null); 
 
 
 
@@ -45,6 +53,40 @@ const Login = () => {
                 // toast.error(error.message);
                 toast.error('Invalid Email or Password !');
             })
+    }
+
+
+
+    const handleGoogleSignIn = () => {
+        return googleSignIn()
+         .then((result) => {
+            setSuccess('You have Logged-In Successfully.')
+            toast.success ('You have Logged-In Successfully.')
+            // navigate after login
+            navigate(location?.state?  location.state : '/');
+          })
+          .catch((error) => {
+            console.log('error', error.message)
+            setRegError(error.message);
+            toast.error(error.message);
+            toast.error('Invalid Email or Password !');
+          });
+    }
+
+    const handleGithubSignIn = () => {
+        return githubSignIn()
+         .then((result) => {
+            setSuccess('You have Logged-In Successfully.')
+            toast.success ('You have Logged-In Successfully.')
+            // navigate after login
+            navigate(location?.state?  location.state : '/');
+          })
+          .catch((error) => {
+            console.log('error', error.message)
+            setRegError(error.message);
+            toast.error(error.message);
+            toast.error('Invalid Email or Password !');
+          });
     }
 
 
@@ -88,6 +130,7 @@ const Login = () => {
                         </div>
                     </form>
 
+                    
                     <div className="-mt-6 font-semibold text-center">
                         <button onClick={handleGoogleSignIn} className="btn">Login with Google</button>
                         <button onClick={handleGithubSignIn} className="btn ml-4">Login with GitHub</button>
@@ -111,7 +154,7 @@ const Login = () => {
             </div>
         </div>
 
-        <ToastContainer />
+       
         
       </div>
     );

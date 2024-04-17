@@ -3,9 +3,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { Navigate } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const UpdateProfile = () => {
-    const { user, updateUserProfile,
+    const { user, setUser, updateUserProfile,
          setReload 
         } = useContext(AuthContext);
 
@@ -19,16 +22,16 @@ const UpdateProfile = () => {
 
 
 
-        //reset error & success message
-        // setRegError('');
-        // setSuccess('');
-
-
         // update profile 
         updateUserProfile(name, photoURL).then(()=> {
             Navigate(form);
             setReload(true);
+
         });
+
+        setUser({displayName : name, photoURL : photoURL})
+
+        toast.success('Profile Updated Successfully!')
     
     }
 
@@ -75,6 +78,8 @@ const UpdateProfile = () => {
                             </div>
 
             </form>
+
+            {/* <ToastContainer /> */}
 
         </div>
     );

@@ -3,6 +3,12 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import app from "../firebase/firebase.config";
 
 
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+
+
+
 export const AuthContext = createContext(null); 
 
 const auth = getAuth(app);
@@ -11,10 +17,20 @@ const githubProvider = new GithubAuthProvider();
 
 
 const AuthProvider = ({children}) => {
+
+    // const [regError, setRegError] = useState(''); 
+    // const [success, setSuccess] = useState(''); 
+    // console.log(regError)
+    // console.log(success)
+
+
     const [user, setUser] = useState(null); 
     const [loading, setLoading] = useState(true); 
 
     const [reload, setReload] = useState(false); 
+
+    // const location = useLocation(); 
+    // const navigate = useNavigate();
 
 
     const createUser = (email, password) => {
@@ -23,7 +39,7 @@ const AuthProvider = ({children}) => {
     }
     
     const updateUserProfile = (name, image) => {
-        setLoading(true)
+        // setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: image
@@ -36,14 +52,14 @@ const AuthProvider = ({children}) => {
     }
 
 
-
     
-    const handleGoogleSignIn = () => {
-        // console.log('google is coming')
-        signInWithPopup(auth, googleProvider)
+
+
+
+    const googleSignIn = () => {
+        return signInWithPopup(auth, googleProvider)
         .then((result) => {
             const loggedInUser = result.user;
-            // console.log(loggedInUser);
             setUser(loggedInUser);
           })
           .catch((error) => {
@@ -51,18 +67,32 @@ const AuthProvider = ({children}) => {
           });
     }
 
-    const handleGithubSignIn = () => {
-        signInWithPopup(auth, githubProvider)
+    const githubSignIn = () => {
+        return signInWithPopup(auth, githubProvider)
         .then((result) => {
             const loggedInUser = result.user;
-            console.log(loggedInUser);
             setUser(loggedInUser);
           })
           .catch((error) => {
-            // console.log('error', error.message)
-            console.log(error)
+            console.log('error', error.message)
           });
     }
+
+
+
+
+    // const handleGithubSignIn = () => {
+    //     signInWithPopup(auth, githubProvider)
+    //     .then((result) => {
+    //         const loggedInUser = result.user;
+    //         console.log(loggedInUser);
+    //         setUser(loggedInUser);
+    //       })
+    //       .catch((error) => {
+    //         // console.log('error', error.message)
+    //         console.log(error)
+    //       });
+    // }
 
 
 
@@ -90,9 +120,14 @@ const AuthProvider = ({children}) => {
         updateUserProfile,
         setReload,
         signIn,
-        handleGoogleSignIn,
-        handleGithubSignIn,
-        logOut
+        googleSignIn,
+        githubSignIn,
+        // handleGithubSignIn,
+        logOut,
+
+        setUser
+        // regError,
+        // success
     }
 
     return (

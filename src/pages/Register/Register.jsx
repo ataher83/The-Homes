@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
 
 
@@ -50,8 +50,8 @@ const Register = () => {
             return;
         }
         else if (!accepted) {
-            setRegError('Please accept our Tearms & Conditions!');
-            toast.error('Please accept our Tearms & Conditions!');
+            setRegError('Please accept our Terms & Conditions!');
+            toast.error('Please accept our Terms & Conditions!');
             return;
         }
 
@@ -66,14 +66,14 @@ const Register = () => {
                 toast.success('User Created Successfully.');
 
 
-                // // update profile 
-                // updateProfile(result.user, {
-                //     displayName: name, 
-                //     photoURL: photoURL
-                //     // photoURL: "https://example.com/jane-q-user/profile.jpg"
-                // })
-                // .then(()=> console.log('Profile updated'))
-                // .catch()
+                // update profile 
+                updateProfile(result.user, {
+                    displayName: name, 
+                    photoURL: photoURL
+                    // photoURL: "https://example.com/jane-q-user/profile.jpg"
+                })
+                .then(()=> console.log('Profile updated'))
+                .catch() 
 
             })
             .catch(error => {
@@ -171,7 +171,7 @@ const Register = () => {
                 </div>
             </div>
 
-            <ToastContainer />
+            {/* <ToastContainer /> */}
 
       </div>
     );
