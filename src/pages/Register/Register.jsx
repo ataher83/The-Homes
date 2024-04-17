@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
 
     const [regError, setRegError] = useState(''); 
     const [success, setSuccess] = useState(''); 
@@ -75,6 +75,8 @@ const Register = () => {
                 .then(()=> console.log('Profile updated'))
                 .catch() 
 
+                return logOut();
+
             })
             .catch(error => {
                 console.error(error)
@@ -82,8 +84,18 @@ const Register = () => {
                 toast.error(error.message);
             })
 
+
+            // return logOut();
+
     
     }
+
+
+    // const handleSignOut = () => {
+    //     logOut()
+    //         .then()
+    //         .catch() 
+    // }
 
 
     return (
@@ -151,7 +163,10 @@ const Register = () => {
 
 
                             <div className="form-control mt-6">
-                                <button className="btn bg-purple-600 font-bold text-black ">Register</button>
+
+                                <button 
+                                // onClick={handleSignOut}
+                                className="btn bg-purple-600 font-bold text-black ">Register</button>
                             </div>
 
                         </form>

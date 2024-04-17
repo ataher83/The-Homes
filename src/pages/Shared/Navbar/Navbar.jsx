@@ -50,17 +50,19 @@ const Navbar = () => {
                     user?
                         // <div className="tooltip" data-tip="user name">
                         //user.email
-                        <div className="tooltip" data-tip={user.displayName} >
+                        <div >
                             {/* <span>{user.displayName}</span> */}
                             <span>{user.email}</span>
                             <div className="flex gap-3">
-                                <div className="avatar">
+                                
+                                
+                                <div className="avatar  tooltip" data-tip={user.displayName} >
                                     <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                        {/* <div>{user.displayName}</div> */}
                                         <img src={user.photoURL} />
-                                        {/* <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
+                                        
                                     </div>
                                 </div>
+                                
                                 <div>
                                     <button onClick={handleSignOut}
                                     className="btn">Sign Out</button>
