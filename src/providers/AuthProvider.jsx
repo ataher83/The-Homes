@@ -81,21 +81,6 @@ const AuthProvider = ({children}) => {
 
 
 
-    // const handleGithubSignIn = () => {
-    //     signInWithPopup(auth, githubProvider)
-    //     .then((result) => {
-    //         const loggedInUser = result.user;
-    //         console.log(loggedInUser);
-    //         setUser(loggedInUser);
-    //       })
-    //       .catch((error) => {
-    //         // console.log('error', error.message)
-    //         console.log(error)
-    //       });
-    // }
-
-
-
     const logOut = () => {
         setLoading(true)
         return signOut(auth); 
